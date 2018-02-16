@@ -1,0 +1,16 @@
+#Parametros
+#PBS -N PlantCLEF2018_download_data
+#PBS -l walltime=71:59:59
+
+
+#comandos utiles
+#qsub -l nodes=tule-03.cnca theano.pbs
+#module avail
+#module list
+#qsub run_PlantCLEF2018_download_data.pbs
+
+
+#carga de modulos del cenat
+module load intelpython/2.7
+
+python download_lifeclef17_web_train_data.py PlantCLEF2017TrainWeb.csv data 20

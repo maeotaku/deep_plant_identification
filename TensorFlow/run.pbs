@@ -1,0 +1,17 @@
+#PBS -N training1
+#PBS -q gpu-n1h72
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=71:59:59
+
+#qsub -l nodes=tule-03.cnca theano.pbs
+
+#module avail
+#module list
+
+module load cuda/8.0.61
+module load cudnn-8/6.0.21
+module load cudnn-8/5.1.10
+module load intelpython/2.7
+module load hdf5/1.10.0-patch1
+
+THEANO_FLAGS="device=cuda" python ~/Theano/TrainModel.py
